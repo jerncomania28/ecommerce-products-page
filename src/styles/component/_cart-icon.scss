@@ -1,0 +1,27 @@
+@import "../abstracts/color-variable";
+.cart-icon {
+  position: relative;
+
+  .cart-icon-asset {
+    cursor: pointer;
+  }
+
+  .cart-item-count {
+    width: 20px;
+    // aspect-ratio: 1/1;
+    height: 8px;
+    padding: 0.3rem;
+    border-radius: 5px;
+
+    font-size: 7px;
+    font-weight: 900;
+    color: $white;
+    background: $orange;
+
+    position: absolute;
+    top: 0rem;
+    right: -0.5rem;
+
+    @include general--flex;
+  }
+}

@@ -1,0 +1,43 @@
+@import "../abstracts/mixins";
+
+.cart-container {
+  width: 300px;
+  height: 250px;
+  //   border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 1rem;
+  z-index: 5;
+
+  @include general--flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 4.5rem;
+  right: 2rem;
+
+  h1 {
+    width: 100%;
+    font-size: 14px;
+    align-self: flex-start;
+    justify-self: flex-start;
+    border-bottom: 0.5px solid gray;
+    padding-bottom: 1rem;
+    font-weight: 700px;
+  }
+
+  .cart-item_container {
+    overflow: scroll;
+  }
+
+  .checkout-btn {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: $orange;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
