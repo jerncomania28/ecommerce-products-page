@@ -2,20 +2,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // States 
-import isCartOpen from "./isCartOPen/isCartOpen.states";
-import Products from "./products/product.states";
-import CartItems from "./cartitems /cartItems.states";
-import IconMenu from "./IconMenu/IconMenu.states";
-
+import coreReducer from "./core";
+import productReducer from "./products";
+import cartReducer from "./carts";
 
 const Store = configureStore({
     reducer: {
-        cartOpen: isCartOpen,
-        products: Products,
-        cartItems: CartItems,
-        menuOpen: IconMenu,
+        core: coreReducer ,
+        products: productReducer,
+        carts: cartReducer
     }
 })
-
 
 export default Store;
