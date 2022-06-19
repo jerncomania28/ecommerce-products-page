@@ -2,7 +2,7 @@
 
 const Home = () => {
     return (
-        <div>
+        <div style={{backgroundColor: '#cccccc', minHeight: '100vh'}}>
             This is the Home Page
         </div>
     )

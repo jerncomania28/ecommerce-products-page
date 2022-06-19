@@ -12,10 +12,10 @@ import MenuBtn from "../../components/mobile-menuBtn/menuBtn.component";
 
 const Navigation = () => {
     // retrieve  value from store.
-    const isCartOpen = useSelector((state) => state.cartOpen.value.isCartOpen);
+    const isCartOpen = useSelector((state) => state.core.isCartOpen);
 
+    console.log('cart open: ',isCartOpen)
     //navigation menu array 
-
     const NAV_MENU = ["Collections", "Man", "Woman", "About", "Contact"];
 
     return (

@@ -8,10 +8,10 @@ const coreSlice = createSlice({
   },
   reducers: {
     setIconMenu: (state, action) => {
-      state.value.iconMenu = action.payload;
+      state.iconMenu = action.payload;
     },
     setIsCartOpen: (state, action) => {
-      state.value.isCartOpen = action.payload;
+      state.isCartOpen = action.payload;
     }
   }
 })
