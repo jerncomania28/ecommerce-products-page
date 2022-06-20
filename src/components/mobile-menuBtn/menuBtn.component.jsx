@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 //assets 
 import IconMenu from "../../assets/icon-menu.svg";
+
 import IconClose from "../../assets/icon-close.svg";
 
 
