@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setIsCartOpen } from "../../states/isCartOPen/isCartOpen.states";
+import { setIsCartOpen } from "../../states/core";
 //assets
 import { ReactComponent as CartIconAsset } from "../../assets/icon-cart.svg";
 
 
 const CartIcon = () => {
     //retrieve data frm global state 
-    const isCartOpen = useSelector((state) => state.cartOpen.value.isCartOpen);
+    const isCartOpen = useSelector((state) => state.core.isCartOpen);
     // calls function from global store 
     const dispatch = useDispatch();
 
