@@ -1,13 +1,14 @@
 @import "../abstracts/mixins";
 
-.menu {
+// mobile menu --start
+.mobile-menu {
   display: none;
-  
   position: relative;
   top: 0.3rem;
   left: 0.4rem;
 
-  .menu-items {
+  // menu items container --start
+  &__items {
     width: 60vh;
     height: 100vh;
 
@@ -20,14 +21,14 @@
     top: 0rem;
     left: 0rem;
   }
+  // menu items container --end
 }
 
-// @media screen and (max-width: 750px) {
-//
-// }
+// mobile menu --end
+
 
 @include media-query-lg(750px) {
-  .menu {
+  .mobile-menu {
     display: inline-block;
   }
 }

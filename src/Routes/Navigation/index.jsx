@@ -5,39 +5,38 @@ import { ReactComponent as Logo } from "../../assets/logo.svg";
 import Avatar from "../../assets/image-avatar.png";
 
 //components
-import CartIcon from "../../components/cartIcon/cartIcon.component";
-import Cart from "../../components/cart/cart.component";
-import MenuBtn from "../../components/mobile-menuBtn/menuBtn.component";
+import CartIcon from "../../components/cartIcon";
+import Cart from "../../components/cart";
+import MenuBtn from "../../components/mobile-menuBtn";
 
 
 const Navigation = () => {
     // retrieve  value from store.
     const isCartOpen = useSelector((state) => state.core.isCartOpen);
 
-    console.log('cart open: ',isCartOpen)
     //navigation menu array 
     const NAV_MENU = ["Collections", "Man", "Woman", "About", "Contact"];
 
     return (
         <>
-            <div className="navigation-bar">
-                <div className="navigation-bar_container">
-                    <div className="navigation-bar_container_mini">
+            <div className="navigation">
+                <div className="navigation__container">
+                    <div className="navigation__mini">
 
                         <MenuBtn NAV_MENU={NAV_MENU} />
 
                         <Logo className="logo" />
-                        <div className="nav_menu">
+                        <div className="menu">
                             {
                                 NAV_MENU.map((menuItem, index) => {
-                                    return <Link key={index} className="nav_menu-item" to={`/${menuItem.toLowerCase()}`}>{menuItem}</Link>
+                                    return <Link key={index} className="menu__item" to={`/${menuItem.toLowerCase()}`}>{menuItem}</Link>
                                 })
                             }
                         </div>
                     </div>
-                    <div className="cart-profile">
+                    <div className="profile">
                         <CartIcon />
-                        <div className="profile-picture">
+                        <div className="profile__picture">
                             <img src={Avatar} alt={"profile-assets"} />
                         </div>
                     </div>

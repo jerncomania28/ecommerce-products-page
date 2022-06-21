@@ -1,20 +1,32 @@
 @import "../abstracts/mixins";
 
-.navigation-bar {
+//navigation --start
+.navigation {
   width: 100%;
   height: 70px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-  &_container {
+
+  // navigation container --start
+  &__container {
     width: 90%;
     margin: 0 auto;
     padding: 0.5rem;
-    // z-index: 1;
+    @include general--flex;
+  }
+  // navigation container --end
 
+  //naviagtion mini --start
+  &__mini {
+    @include general--flex;
+
+    //logo --start 
     .logo {
       margin: 0 1.5rem;
     }
+    // logo --end 
 
-    .nav_menu-item {
+    // menu items --start 
+    .menu__item {
       margin: 0 0.3rem;
       padding-bottom: 1rem;
 
@@ -22,43 +34,42 @@
         border-bottom: 2px solid $orange;
       }
     }
+    // menu items --end 
+  }
+  // navigation mini --end
 
-    &_mini {
-      @include general--flex;
-    }
-
-    //display code
+  // profile styles --start
+  .profile {
     @include general--flex;
-  }
 
-  .cart-profile {
-    @include general--flex;
-  }
-  .profile-picture {
-    width: 40px;
-    position: relative;
-    margin: 0 1.5rem;
-    border: 3px solid $orange;
-    border-radius: 60%;
+    &__picture {
+      width: 40px;
+      position: relative;
+      margin: 0 1.5rem;
+      border: 3px solid $orange;
+      border-radius: 60%;
 
-    &:hover {
-      cursor: pointer;
-    }
+      &:hover {
+        cursor: pointer;
+      }
 
-    img {
-      width: 100%;
+      img {
+        width: 100%;
+      }
     }
   }
+  // profile styles --end
 }
+//navigation --end
 
 @include media-query-lg(750px) {
-  .navigation-bar {
+  .navigation {
     &_container {
       width: 100%;
     }
-  }
 
-  .nav_menu {
-    display: none;
+    .menu {
+      display: none;
+    }
   }
 }

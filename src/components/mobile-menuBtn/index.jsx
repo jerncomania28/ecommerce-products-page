@@ -20,23 +20,23 @@ const MenuBtn = ({ NAV_MENU }) => {
     }
 
     return (
-        <div className="menu">
+        <div className="mobile-menu">
 
-            <div className="menu-burger_open" onClick={toggleMenu}>
+            <div className="mobile-menu__burger" onClick={toggleMenu}>
                 <img src={IconMenu} alt="icon-menu" />
             </div>
 
             {
                 isMenuOpen &&
-                <div className="menu-items">
-                    <div className="menu-burger_cancel" onClick={toggleMenu}>
+                <div className="mobile-menu__items">
+                    <div className="mobile-menu__cancel" onClick={toggleMenu}>
 
                         <img src={IconClose} alt="icon-close" />
 
                     </div>
                     {
                         NAV_MENU.map((menuItem, index) => {
-                            return <Link key={index} to={`/${menuItem}`} className="menu-item">{menuItem}</Link>
+                            return <Link key={index} to={`/${menuItem}`} className="mobile-menu__item">{menuItem}</Link>
                         })
 
                     }

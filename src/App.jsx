@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router";
 
 
 //components 
-import Navigation from "./Routes/Navigation/Navigation.routes";
+import Navigation from "./Routes/Navigation";
 import Home from "./Routes/pages/Home/Home.pages";
 
 //styles 
