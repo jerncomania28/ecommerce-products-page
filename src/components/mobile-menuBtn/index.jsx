@@ -28,7 +28,7 @@ const MenuBtn = ({ NAV_MENU }) => {
 
             {
                 isMenuOpen &&
-                <div className="mobile-menu__items">
+                <div className="mobile-menu__items" >
                     <div className="mobile-menu__cancel" onClick={toggleMenu}>
 
                         <img src={IconClose} alt="icon-close" />
