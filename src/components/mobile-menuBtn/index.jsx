@@ -36,7 +36,7 @@ const MenuBtn = ({ NAV_MENU }) => {
                     </div>
                     {
                         NAV_MENU.map((menuItem, index) => {
-                            return <Link key={index} to={`/${menuItem}`} className="mobile-menu__item">{menuItem}</Link>
+                            return <Link key={index} to={`/${menuItem}`} className="mobile-menu__item" onClick={toggleMenu}>{menuItem}</Link>
                         })
 
                     }

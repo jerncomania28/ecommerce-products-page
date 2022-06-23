@@ -1,0 +1,86 @@
+@import "../abstracts/color-variable";
+@import "../abstracts/mixins";
+
+@mixin carousel-controls {
+  padding: 0.7rem;
+  border-radius: 50%;
+  background: white;
+  @include general--flex;
+}
+
+.display {
+  min-width: 350px;
+  width: 45%;
+  position: relative;
+  @include general--flex;
+  justify-content: center;
+  flex-direction: column;
+ 
+  &-playground {
+    width: 80%;
+    position: relative;
+    padding: 0.5rem;
+
+    .controls {
+      display: none;
+      width: 100%;
+      justify-content: space-between;
+
+      &__next {
+        @include carousel-controls;
+        margin-right: 1rem;
+      }
+
+      &__prev {
+        @include carousel-controls;
+        margin-left: 1rem;
+      }
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  &-options {
+    width: 80%;
+    @include general--flex;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 0.5rem;
+
+    img {
+      width: 55px;
+      border-radius: 7px;
+    }
+  }
+}
+
+@include media-query-lg(750px) {
+  .display {
+    width: 100%;
+  }
+
+  .display-options {
+    display: none;
+  }
+
+  .display-playground {
+    width: 100%;
+    padding: 0;
+
+    .controls {
+      display: flex;
+    }
+
+    img {
+      border-radius: 0;
+    }
+  }
+}
