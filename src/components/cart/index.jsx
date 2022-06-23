@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 const Cart = () => {
 
     const carts = useSelector((state) => state.carts.items)
+
+    console.log(carts);
     return (
         <div className="cart-container">
             <h1> Cart</h1>
@@ -12,7 +14,7 @@ const Cart = () => {
                 {
                     carts.length ? carts.map(cartItem => {
                         return (
-                            <div className="cart-item">
+                            <div className="cart-item" key={cartItem.id}>
                                 This is a Cart item
                             </div>
                         )
