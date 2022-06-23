@@ -1,3 +1,6 @@
+import {useDispatch } from "react-redux";
+
+import { addProductsToCart } from "../../states/carts";
 
 //assets 
 
@@ -6,6 +9,15 @@ import IconMinus from "../../assets/icon-minus.svg";
 import IconCart from "../../assets/icon-cart.svg";
 
 const Content = ({ product }) => {
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+
+        dispatch(addProductsToCart(product));
+    }
+
+
 
     const { companyName, name, description, price, percentage, previousPrice } = product;
     return (
@@ -33,10 +45,9 @@ const Content = ({ product }) => {
                         <img src={IconPlus} alt="icon-plus" />
                     </div>
                 </div>
-                <div className="content--fn__cart-btn">
+                <div className="content--fn__cart-btn" onClick={handleAddToCart}>
                     <img src={IconCart} alt="cart-icon" />
                     <span> Add To Cart</span>
-
                 </div>
 
             </div>
