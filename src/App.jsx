@@ -3,7 +3,9 @@ import { Routes, Route } from "react-router";
 
 //components 
 import Navigation from "./Routes/Navigation";
-import Home from "./Routes/pages/Home/Home.pages";
+import Home from "./Routes/pages/Home";
+import Collection from "./Routes/pages/collections ";
+import PageNotFound from "./Routes/pages/NotFoundPage";
 
 //styles 
 import "./styles/app.styles.scss";
@@ -14,6 +16,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />} >
           <Route index element={<Home />} />
+          <Route path="collections" element={<Collection />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </>

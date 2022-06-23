@@ -7,6 +7,7 @@ import Image4 from "./assets/image-product-4.jpg";
 
 export const PRODUCT_DATA = [
   {
+    id: 1,
     companyName: "sneaker company",
     name: "fall limited edition sneakers",
     description:

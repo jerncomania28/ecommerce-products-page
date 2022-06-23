@@ -1,0 +1,27 @@
+@import "../abstracts/color-variable";
+@import "../abstracts/mixins";
+
+.hero {
+  width: 100%;
+  // border: 1px solid black;
+  // margin-top: 2rem;
+
+
+  &-mini {
+    width: 90%;
+    margin: auto;
+    @include general--flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // border: 1px solid black;
+    position: relative;
+  }
+}
+
+@include media-query-lg(750px) {
+  .hero {
+    &-mini {
+      width: 100%;
+    }
+  }
+}

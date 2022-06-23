@@ -17,6 +17,8 @@ const Navigation = () => {
     //navigation menu array 
     const NAV_MENU = ["Collections", "Man", "Woman", "About", "Contact"];
 
+
+
     return (
         <>
             <div className="navigation">
@@ -25,7 +27,7 @@ const Navigation = () => {
 
                         <MenuBtn NAV_MENU={NAV_MENU} />
 
-                        <Logo className="logo" />
+                        <Link to="/"><Logo className="logo" /></Link>
                         <div className="menu">
                             {
                                 NAV_MENU.map((menuItem, index) => {
