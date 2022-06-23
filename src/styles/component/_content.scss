@@ -2,8 +2,133 @@
 @import "../abstracts/mixins";
 
 .content {
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 45%;
   min-width: 350px;
-  // height: 400px;
+  padding: 1.5rem 1rem;
+  position: relative;
+
+  &__company-name {
+    color: $orange;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: 10px 0px;
+    font-size: 24px;
+  }
+
+  &__text {
+    margin: 0.5rem 0rem;
+    text-align: left;
+    font-size: 16px;
+  }
+  &--price {
+    // @include general--flex;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 95%;
+    margin: 1rem auto;
+
+    .box {
+      // width: 100px;
+      display: flex;
+      // flex-direction: column;
+
+      &__price {
+        font-size: 30px;
+        font-weight: bolder;
+      }
+      &__percentage {
+        font-size: 12px;
+        font-weight: bolder;
+        padding: 2px 4px 2px 4px;
+        margin: 0.3rem;
+        background: $pal-orange;
+        color: $orange;
+        border-radius: 5px;
+        @include general--flex;
+      }
+    }
+
+    &__previous {
+      font-size: 16px;
+      text-decoration: line-through;
+    }
+  }
+
+  &--fn {
+    width: 100%;
+    margin: auto;
+    @include general--flex;
+
+    &__cart-btn {
+      width: 45%;
+      padding: 1rem;
+      font-weight: bolder;
+      margin: 1rem auto;
+      border-radius: 10px;
+      @include general--flex;
+      justify-content: center;
+      align-items: center;
+      background: $orange;
+      color: $white;
+
+      img {
+        color: $white;
+      }
+    }
+
+    &__icon {
+      width: 10%;
+      text-align: center;
+    }
+
+    &__quantity {
+      width: 80%;
+      text-align: center;
+    }
+    &__controls {
+      width: 45%;
+      padding: 1rem;
+      background: $light-grayish-blue;
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@include media-query-lg(750px) {
+  .content {
+    width: 100%;
+  }
+
+  .content--price {
+    flex-direction: row;
+  }
+
+  .content--price__previous {
+    align-self: flex-end;
+  }
+
+  .content--fn{
+    flex-direction: column;
+  }
+
+  .content--fn__controls {
+    width: 100%;
+  }
+
+  .content--fn__cart-btn {
+    width: 100%;
+  }
 }

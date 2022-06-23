@@ -35,6 +35,7 @@ const Navigation = () => {
                                 })
                             }
                         </div>
+
                     </div>
                     <div className="profile">
                         <CartIcon />
@@ -43,9 +44,12 @@ const Navigation = () => {
                         </div>
                     </div>
                 </div>
+
+
                 {
                     isCartOpen && <Cart />
                 }
+
             </div>
             <Outlet />
         </>

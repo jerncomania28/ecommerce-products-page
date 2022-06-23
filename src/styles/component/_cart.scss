@@ -7,9 +7,9 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   padding: 1rem;
-  z-index: 5;
+  z-index: 10;
+  background: white;
   // background: gray;
-
 
   @include general--flex;
   flex-direction: column;
@@ -38,23 +38,21 @@
     padding: 0.3rem;
     margin: 0.6rem;
 
-    &--flow{
-      overflow-y: scroll
+    &--flow {
+      overflow-y: scroll;
     }
 
-
-    .empty{
+    .empty {
       @include general--flex;
       margin: auto;
       text-align: center;
       overflow-y: hidden;
     }
 
-
     .cart-item {
       width: 100%;
       padding: 1rem;
-      border: 1px solid black ;
+      border: 1px solid black;
     }
   }
   // items list container --end I

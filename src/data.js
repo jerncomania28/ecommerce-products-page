@@ -12,7 +12,7 @@ export const PRODUCT_DATA = [
     name: "fall limited edition sneakers",
     description:
       "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole , they'll withstand everything the weather cacn offer.",
-    price: 125.0,
+    price: 125.00,
     percentage: 50,
     previousPrice: 250,
     images: [Image1, Image2, Image3, Image4],
