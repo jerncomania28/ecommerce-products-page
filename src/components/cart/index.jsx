@@ -1,10 +1,14 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteProductFromCart } from "../../states/carts";
+
+//assets
+import IconDelete from "../../assets/icon-delete.svg";
 
 const Cart = () => {
 
-    const carts = useSelector((state) => state.carts.items)
+    const carts = useSelector((state) => state.carts.items);
 
-    console.log(carts);
+    const dispatch = useDispatch();
     return (
         <div className="cart-container">
             <h1> Cart</h1>
@@ -13,11 +17,30 @@ const Cart = () => {
             <div className={carts.length ? "cart-items__container cart-items__container--flow" : "cart-items__container"}>
                 {
                     carts.length ? carts.map(cartItem => {
+                        const { images, name, price, quantity } = cartItem;
+
+                        const handleDeleteProduct = () => {
+                            dispatch(deleteProductFromCart(cartItem))
+                        }
                         return (
+
                             <div className="cart-item" key={cartItem.id}>
-                                This is a Cart item
+
+                                <div className="cart-item__image">
+                                    <img src={images[0]} alt="cart-item.img" />
+                                </div>
+                                <div className="cart-item__content">
+                                    <h3 className="cart-item__title">{name}</h3>
+                                    <p className="cart-item__value">{`$${price} X ${quantity}`}</p>
+
+                                </div>
+                                <div className="cart-item__delete-btn"  >
+                                    <img src={IconDelete} alt="delete-item.img" onClick={handleDeleteProduct} />
+                                </div>
+
                             </div>
                         )
+
                     }) : <div className="empty">cart is empty!</div>
                 }
             </div>

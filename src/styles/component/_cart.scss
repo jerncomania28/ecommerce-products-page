@@ -51,8 +51,35 @@
 
     .cart-item {
       width: 100%;
-      padding: 1rem;
-      border: 1px solid black;
+      height: 70px;
+      padding: 0.5rem;
+      margin-bottom: 0.3rem;
+      position: relative;
+
+      @include general--flex;
+      align-items: center;
+
+      &__image{
+        position: relative;
+        width: 70px;
+        margin: 0.3rem;
+        img{
+          width: 100%;
+        }
+      }
+
+      &__content{
+        padding: 0.3rem;
+      }
+
+      &__title{
+        font-size: 14px;
+        margin-bottom: 3px;
+      }
+
+      &__value{
+        font-size: 14px;
+      }
     }
   }
   // items list container --end I

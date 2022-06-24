@@ -4,10 +4,59 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
+    count: 0,
+    total: 0,
   },
   reducers: {
-    setCartItems: (state, action) => {
-      state.items = action.payload;
+    cartTotal: (state) => {
+      const cartItems = state.items;
+
+      const total = cartItems.reduce((acc, item) => {
+        return acc + item.quantity * item.price;
+      }, 0);
+
+      state.total = total;
+    },
+    cartCount: (state) => {
+      const cartItems = state.items;
+
+      const count = cartItems.reduce((acc, item) => {
+        return acc + 1;
+      }, 0);
+
+      state.count = count;
+    },
+
+    deleteProductFromCart: (state, action) => {
+      const cartItems = state.items;
+      const product = action.payload;
+
+      const deleteProduct = (cartItems, product) => {
+        return cartItems.filter((item) => item.id !== product.id);
+      };
+
+      state.items = deleteProduct(cartItems, product);
+    },
+
+    removeProductsFromCart: (state, action) => {
+      const cartItems = state.items;
+      const product = action.payload;
+
+      const removeProduct = (cartItems, product) => {
+        const existingItem = cartItems.find((item) => item.id === product.id);
+
+        if (existingItem.quantity === 1) {
+          return cartItems.filter((item) => item.id === product.id);
+        } else {
+          return cartItems.map((item) =>
+            item.id === product.id
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          );
+        }
+      };
+
+      state.items = removeProduct(cartItems, product);
     },
     addProductsToCart: (state, action) => {
       const cartItems = state.items;
@@ -32,5 +81,11 @@ const cartSlice = createSlice({
   },
 });
 
-export const { setCartItems, addProductsToCart } = cartSlice.actions;
+export const {
+  cartTotal,
+  cartCount,
+  addProductsToCart,
+  removeProductsFromCart,
+  deleteProductFromCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;
