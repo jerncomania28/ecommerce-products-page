@@ -8,6 +8,7 @@ const cartSlice = createSlice({
     total: 0,
   },
   reducers: {
+    // calculates the cummulative prices of all products in a cart
     cartTotal: (state) => {
       const cartItems = state.items;
 
@@ -17,6 +18,8 @@ const cartSlice = createSlice({
 
       state.total = total;
     },
+
+    // cart count Fn -- total number of items in cart -- start
     cartCount: (state) => {
       const cartItems = state.items;
 
@@ -27,6 +30,7 @@ const cartSlice = createSlice({
       state.count = count;
     },
 
+    // delete product from cart --start
     deleteProductFromCart: (state, action) => {
       const cartItems = state.items;
       const product = action.payload;
@@ -38,6 +42,7 @@ const cartSlice = createSlice({
       state.items = deleteProduct(cartItems, product);
     },
 
+    // remove product from cart --start
     removeProductsFromCart: (state, action) => {
       const cartItems = state.items;
       const product = action.payload;
@@ -46,7 +51,7 @@ const cartSlice = createSlice({
         const existingItem = cartItems.find((item) => item.id === product.id);
 
         if (existingItem.quantity === 1) {
-          return cartItems.filter((item) => item.id === product.id);
+          return cartItems.filter((item) => item.id !== product.id);
         } else {
           return cartItems.map((item) =>
             item.id === product.id
@@ -58,6 +63,8 @@ const cartSlice = createSlice({
 
       state.items = removeProduct(cartItems, product);
     },
+
+    // add products to cart once --start.
     addProductsToCart: (state, action) => {
       const cartItems = state.items;
       const product = action.payload;
@@ -65,18 +72,32 @@ const cartSlice = createSlice({
       const addProduct = (cartItems, product) => {
         const existingItem = cartItems.find((item) => item.id === product.id);
 
+        if (!existingItem) {
+          state.items = [...cartItems, { ...product, quantity: 1 }];
+        }
+      };
+
+      addProduct(cartItems, product);
+    },
+
+    // increase quantity of product already in cart --start.
+    increaseProductQuantity: (state, action) => {
+      const cartItems = state.items;
+      const product = action.payload;
+
+      const increaseQuantity = (cartItems, product) => {
+        const existingItem = cartItems.find((item) => item.id === product.id);
+
         if (existingItem) {
-          return cartItems.map((item) =>
+          state.items = cartItems.map((item) =>
             item.id === product.id
               ? { ...item, quantity: item.quantity + 1 }
               : item
           );
         }
-
-        return [...cartItems, { ...product, quantity: 1 }];
       };
 
-      state.items = addProduct(cartItems, product);
+      increaseQuantity(cartItems, product);
     },
   },
 });
@@ -87,5 +108,6 @@ export const {
   addProductsToCart,
   removeProductsFromCart,
   deleteProductFromCart,
+  increaseProductQuantity,
 } = cartSlice.actions;
 export default cartSlice.reducer;

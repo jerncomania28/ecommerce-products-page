@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteProductFromCart } from "../../states/carts";
+import { deleteProductFromCart, cartTotal } from "../../states/carts";
 
 //assets
 import IconDelete from "../../assets/icon-delete.svg";
@@ -7,8 +8,16 @@ import IconDelete from "../../assets/icon-delete.svg";
 const Cart = () => {
 
     const carts = useSelector((state) => state.carts.items);
+    const total = useSelector((state) => state.carts.total);
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(cartTotal());
+
+    }, [carts, dispatch])
+
+
     return (
         <div className="cart-container">
             <h1> Cart</h1>
@@ -43,6 +52,7 @@ const Cart = () => {
 
                     }) : <div className="empty">cart is empty!</div>
                 }
+                <div className="cart-items__total">Total : {`$${total}`}</div>
             </div>
 
             {

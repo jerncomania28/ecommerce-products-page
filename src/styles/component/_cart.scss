@@ -42,6 +42,12 @@
       overflow-y: scroll;
     }
 
+    .cart-items__total{
+      width: 100%;
+      text-align: right;
+      font-weight: bolder;
+    }
+
     .empty {
       @include general--flex;
       margin: auto;

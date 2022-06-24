@@ -1,6 +1,7 @@
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { addProductsToCart, removeProductsFromCart } from "../../states/carts";
+import { addProductsToCart, removeProductsFromCart, increaseProductQuantity } from "../../states/carts";
 
 //assets 
 
@@ -10,15 +11,35 @@ import IconCart from "../../assets/icon-cart.svg";
 
 const Content = ({ product }) => {
 
+    const [quantity, setQuantity] = useState(0);
+
+    const carts = useSelector(state => state.carts.items);
+
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
-
         dispatch(addProductsToCart(product));
     }
     const handleRemoveFromCart = () => {
         dispatch(removeProductsFromCart(product));
     }
+    const handleIncreaseQuantity = () => {
+        dispatch(increaseProductQuantity(product));
+    }
+
+    useEffect(() => {
+        const obj = carts.find(cartItem => cartItem.id === product.id);
+        
+        if (obj) {
+            const { quantity } = obj;
+
+            setQuantity(quantity);
+        }
+
+    }, [carts, product.id]);
+
+
+
 
 
 
@@ -42,9 +63,9 @@ const Content = ({ product }) => {
                         <img src={IconMinus} alt="icon-minus" />
                     </div>
                     <div className="content--fn__quantity">
-                        1
+                        {quantity}
                     </div>
-                    <div className="content--fn__icon" onClick={handleAddToCart}>
+                    <div className="content--fn__icon" onClick={handleIncreaseQuantity}>
                         <img src={IconPlus} alt="icon-plus" />
                     </div>
                 </div>
