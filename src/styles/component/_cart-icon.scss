@@ -23,5 +23,6 @@
     right: -0.5rem;
 
     @include general--flex;
+    justify-content: center;
   }
 }

@@ -1,6 +1,6 @@
-import {useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import { addProductsToCart } from "../../states/carts";
+import { addProductsToCart, removeProductsFromCart } from "../../states/carts";
 
 //assets 
 
@@ -15,6 +15,9 @@ const Content = ({ product }) => {
     const handleAddToCart = () => {
 
         dispatch(addProductsToCart(product));
+    }
+    const handleRemoveFromCart = () => {
+        dispatch(removeProductsFromCart(product));
     }
 
 
@@ -35,13 +38,13 @@ const Content = ({ product }) => {
 
             <div className="content--fn ">
                 <div className="content--fn__controls">
-                    <div className="content--fn__icon">
+                    <div className="content--fn__icon" onClick={handleRemoveFromCart}>
                         <img src={IconMinus} alt="icon-minus" />
                     </div>
                     <div className="content--fn__quantity">
                         1
                     </div>
-                    <div className="content--fn__icon">
+                    <div className="content--fn__icon" onClick={handleAddToCart}>
                         <img src={IconPlus} alt="icon-plus" />
                     </div>
                 </div>
