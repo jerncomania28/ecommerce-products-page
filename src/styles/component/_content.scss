@@ -72,7 +72,7 @@
 
     &__cart-btn {
       width: 45%;
-      padding: 1rem;
+      padding: 0.5rem;
       font-weight: bolder;
       margin: 1rem auto;
       border-radius: 10px;
@@ -81,15 +81,21 @@
       align-items: center;
       background: $orange;
       color: $white;
+      cursor: pointer;
 
       img {
         color: $white;
+      }
+      span{
+        font-size: 10px;
+        text-transform: uppercase;
       }
     }
 
     &__icon {
       width: 10%;
       text-align: center;
+      cursor: pointer;
     }
 
     &__quantity {
@@ -98,7 +104,8 @@
     }
     &__controls {
       width: 45%;
-      padding: 1rem;
+      padding: 0.5rem;
+      border-radius: 10px;
       background: $light-grayish-blue;
 
       display: flex;
