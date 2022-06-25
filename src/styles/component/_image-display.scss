@@ -3,7 +3,7 @@
 
 @mixin carousel-controls {
   padding: 0.7rem;
-  border-radius: 50%;
+  border-radius: 100%;
   background: white;
   @include general--flex;
 }
