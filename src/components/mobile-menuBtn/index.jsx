@@ -1,12 +1,11 @@
 
 //Redux-interaction Hooks 
 import { useSelector, useDispatch } from "react-redux";
-import { setIconMenu } from "../../states/core";
+import { setIconMenu, setIsCartOpen } from "../../states/core";
 import { Link } from "react-router-dom";
 
 //assets 
 import IconMenu from "../../assets/icon-menu.svg";
-
 import IconClose from "../../assets/icon-close.svg";
 
 
@@ -17,6 +16,7 @@ const MenuBtn = ({ NAV_MENU }) => {
 
     const toggleMenu = () => {
         dispatch(setIconMenu(!isMenuOpen));
+        dispatch(setIsCartOpen(false));
     }
 
     return (

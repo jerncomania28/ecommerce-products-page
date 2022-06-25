@@ -72,7 +72,7 @@
 
     &__cart-btn {
       width: 45%;
-      padding: 0.5rem;
+      padding: 0.7rem;
       font-weight: bolder;
       margin: 1rem auto;
       border-radius: 10px;
@@ -85,6 +85,7 @@
 
       img {
         color: $white;
+        margin-right: 5px;
       }
       span{
         font-size: 10px;
@@ -104,7 +105,7 @@
     }
     &__controls {
       width: 45%;
-      padding: 0.5rem;
+      padding: 0.7rem;
       border-radius: 10px;
       background: $light-grayish-blue;
 
