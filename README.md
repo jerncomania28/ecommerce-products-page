@@ -1,4 +1,5 @@
-# Ecommerce Prodct's Display Page
+
+# E-commerce Product's Page
 
 Product's Page section of an E-commerce Application .
 
