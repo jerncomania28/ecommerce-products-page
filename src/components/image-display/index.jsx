@@ -31,6 +31,8 @@ const ImageDisplay = ({ Images }) => {
         }
     }
 
+    // setInterval(handleNext, 5000);
+
 
     return (
         <div className="display">
