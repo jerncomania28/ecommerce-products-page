@@ -4,9 +4,19 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import Store from "./states/index";
-//styles
 
+//Icons
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faUser,
+  faCaretDown,
+  faCaretUp,
+} from "@fortawesome/free-solid-svg-icons";
+
+//styles
 import "./styles/index.styles.scss";
+
+library.add(faUser, faCaretDown, faCaretUp);
 
 const root = createRoot(document.getElementById("root"));
 root.render(

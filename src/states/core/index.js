@@ -1,10 +1,12 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const coreSlice = createSlice({
   name: "core",
-  initialState: { 
+  initialState: {
     iconMenu: false,
-    isCartOpen: false 
+    isCartOpen: false,
+    isLoggedIn: false,
+    isProfileOpen: false,
   },
   reducers: {
     setIconMenu: (state, action) => {
@@ -12,12 +14,16 @@ const coreSlice = createSlice({
     },
     setIsCartOpen: (state, action) => {
       state.isCartOpen = action.payload;
-    }
-  }
-})
+    },
+    setIsLoggedIn: (state, action) => {
+      state.isLoggedIn = action.payload;
+    },
+    setIsProfileOpen: (state, action) => {
+      state.isProfileOpen = action.payload;
+    },
+  },
+});
 
-export const {
-  setIconMenu,
-  setIsCartOpen
-} = coreSlice.actions;
+export const { setIconMenu, setIsCartOpen, setIsLoggedIn, setIsProfileOpen } =
+  coreSlice.actions;
 export default coreSlice.reducer;

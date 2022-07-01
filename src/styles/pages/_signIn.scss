@@ -1,0 +1,9 @@
+@import "../abstracts/reset";
+@import "../abstracts/mixins";
+@import "../abstracts/color-variable";
+
+.signIn {
+  background: $orange;
+  width: 100vw;
+  height: 95vh;
+}

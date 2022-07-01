@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsCartOpen } from "../../states/core";
+import { setIsCartOpen, setIsProfileOpen } from "../../states/core";
 import { cartCount } from "../../states/carts";
 //assets
 import { ReactComponent as CartIconAsset } from "../../assets/icon-cart.svg";
@@ -17,6 +17,7 @@ const CartIcon = () => {
 
     const handleCartOpen = () => {
         dispatch(setIsCartOpen(!isCartOpen));
+        dispatch(setIsProfileOpen(false));
     }
 
     useEffect(() => {

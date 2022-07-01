@@ -2,10 +2,9 @@ import { Outlet, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 //assets 
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import Avatar from "../../assets/image-avatar.png";
 
 //components
-import CartIcon from "../../components/cartIcon";
+import CartProfile from "../../components/cart-profile";
 import Cart from "../../components/cart";
 import MenuBtn from "../../components/mobile-menuBtn";
 
@@ -37,14 +36,10 @@ const Navigation = () => {
                         </div>
 
                     </div>
-                    <div className="profile">
-                        <CartIcon />
-                        <div className="profile__picture">
-                            <img src={Avatar} alt={"profile-assets"} />
-                        </div>
-                    </div>
-                </div>
 
+                    <CartProfile />
+
+                </div>
 
                 {
                     isCartOpen && <Cart />
