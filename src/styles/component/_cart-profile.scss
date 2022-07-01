@@ -1,0 +1,52 @@
+@import "../abstracts/reset";
+@import "../abstracts/mixins";
+
+@mixin auth-buttons {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+// profile styles --start
+.profile {
+  @include general--flex;
+
+  &-box {
+    width: 30px;
+    position: relative;
+    margin: 0 1rem;
+    // border: 1px solid black;
+    @include general--flex;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &__caret{
+        align-self: baseline;
+    }
+  }
+
+  &-auth {
+    position: absolute;
+    top: 4.5rem;
+    right: 1rem;
+    width: 150px;
+    background: white;
+    border: 1px solid black;
+    z-index: 5;
+
+    @include general--flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__signIn {
+    @include auth-buttons;
+    border-bottom: 1px solid black;
+  }
+  &__signUp {
+    @include auth-buttons;
+  }
+}
+// profile styles --end
