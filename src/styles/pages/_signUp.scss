@@ -1,6 +1,6 @@
-@import "../abstracts/reset";
-@import "../abstracts/mixins";
 @import "../abstracts/color-variable";
+@import "../abstracts/mixins";
+@import "../abstracts/reset";
 
 @mixin Links-styles {
   font-size: 12px;
@@ -32,7 +32,7 @@
   }
 }
 
-.signIn {
+.signUp {
   background: url("../../assets/background-sneakers.jpg");
   background-size: cover;
   background-position: center;
@@ -102,11 +102,44 @@
     flex-direction: column;
 
     width: 50%;
-    min-width: 250px;
-    max-width: 300px;
+    min-width: 300px;
+    max-width: 350px;
     padding: 1rem;
 
     position: relative;
+
+    &-displayName {
+      @include general--flex;
+      // justify-content: center;
+      align-items: center;
+
+      &__firstName{
+        @include customized-input-div;
+        width: 50%;
+        margin-right: 0.4rem;
+
+
+        &--icon {
+          width: 10%;
+          border: 1px solid black;
+          text-align: center;
+          padding: 0.55rem;
+        }
+      }
+
+      &__lastName{
+        @include customized-input-div;
+        width: 50%;
+        
+
+        &--icon {
+          width: 10%;
+          border: 1px solid black;
+          text-align: center;
+          padding: 0.55rem;
+        }
+      }
+    }
 
     &__email {
       @include customized-input-div;
@@ -164,30 +197,6 @@
       }
       p {
         margin: auto 0.5rem;
-      }
-    }
-
-    &__google {
-      width: 100%;
-      @include general--flex;
-      justify-content: center;
-      align-items: center;
-      // border: 2px solid blue;
-      padding: 0.3rem;
-
-      background: rgb(103, 103, 224);
-      border: 5px;
-      cursor: pointer;
-
-      img {
-        width: 30px;
-        margin-right: 1rem;
-      }
-
-      &--content {
-        color: white;
-        font-weight: bolder;
-        font-size: 14px;
       }
     }
 

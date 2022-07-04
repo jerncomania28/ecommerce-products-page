@@ -30,7 +30,7 @@ googleProvider.setCustomParameters({
 export const auth = getAuth();
 
 export const signInWithGooglePopUp = async () => {
-  await signInWithPopup(auth, googleProvider);
+  return await signInWithPopup(auth, googleProvider);
 };
 
 export const createUserViaEmailAndPassword = async (email, password) => {
@@ -47,19 +47,28 @@ export const signInViaEmailAndPassword = async (email, password) => {
 
 export const db = getFirestore();
 
-export const createUserDoc = async (userAuth) => {
+export const createUserDocWithAuth = async (userAuth, otherProps = {}) => {
   const userDocRef = doc(db, "users", userAuth.uid);
 
+  console.log(userDocRef);
+
   const userDocSnapshot = await getDoc(userDocRef);
+
+  console.log(userDocSnapshot);
 
   if (!userDocSnapshot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
 
-    try{
-        await setDoc(userDocRef , {displayName , email , createdAt});
-    }catch(err){
-        console.log("Unable to create User Document" , err.message);
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+        ...otherProps,
+      });
+    } catch (err) {
+      console.log("Unable to create User Document", err.message);
     }
   }
 
