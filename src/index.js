@@ -11,12 +11,27 @@ import {
   faUser,
   faCaretDown,
   faCaretUp,
+  faXmark,
+  faEye,
+  faEyeSlash,
+  faLock,
+  faCircleExclamation,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-
 //styles
 import "./styles/index.styles.scss";
 
-library.add(faUser, faCaretDown, faCaretUp);
+library.add(
+  faUser,
+  faCaretDown,
+  faCaretUp,
+  faXmark,
+  faEye,
+  faEyeSlash,
+  faLock,
+  faCircleExclamation, 
+  faEnvelope
+);
 
 const root = createRoot(document.getElementById("root"));
 root.render(
