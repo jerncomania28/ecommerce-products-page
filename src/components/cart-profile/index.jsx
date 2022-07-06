@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+
+//Auth Function
+import { signOutUser, onAuthChangedListener } from "../../utils/firebase";
 
 //icons 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,10 +25,35 @@ const CartProfile = () => {
     const userLoggedIn = useSelector((state) => state.core.isLoggedIn);
     const isProfileOpen = useSelector((state) => state.core.isProfileOpen);
 
+
     const handleProfileOpen = () => {
         dispatch(setIsProfileOpen(!isProfileOpen));
         dispatch(setIsCartOpen(false));
     }
+
+
+    console.log(userLoggedIn, "before useEffect Call");
+
+    useEffect(() => {
+
+        const unsubscribeFn = () => {
+            const unsubscribe = onAuthChangedListener((user) => {
+                // console.log(user);
+                const _ac = user ? true : false;
+                dispatch(setIsLoggedIn(_ac));
+
+            })
+
+            return unsubscribe;
+
+        }
+
+        unsubscribeFn();
+    }, [dispatch]);
+
+
+
+
 
 
     return (
@@ -41,7 +70,7 @@ const CartProfile = () => {
                     <div className="profile-auth">
 
                         {
-                            userLoggedIn ? <button type="button">Log Out</button> : (
+                            userLoggedIn ? <button type="button" onClick={signOutUser}>Log Out</button> : (
                                 <>
                                     <Link to="/auth/signIn" className="profile__signIn" onClick={handleProfileOpen}>Sign In </Link>
 

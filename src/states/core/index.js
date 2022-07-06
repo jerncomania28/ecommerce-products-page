@@ -5,7 +5,7 @@ const coreSlice = createSlice({
   initialState: {
     iconMenu: false,
     isCartOpen: false,
-    isLoggedIn: false,
+    isLoggedIn : null,
     isProfileOpen: false,
   },
   reducers: {
