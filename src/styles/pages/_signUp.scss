@@ -39,6 +39,7 @@
   width: 100vw;
   height: 95vh;
   padding-top: 4rem;
+  position: relative;
 
   @include general--flex;
   justify-content: flex-start;
@@ -101,9 +102,9 @@
     @include general--flex;
     flex-direction: column;
 
-    width: 50%;
+    width: 40%;
     min-width: 300px;
-    max-width: 350px;
+    // max-width: 350px;
     padding: 1rem;
 
     position: relative;
@@ -113,11 +114,10 @@
       // justify-content: center;
       align-items: center;
 
-      &__firstName{
+      &__firstName {
         @include customized-input-div;
         width: 50%;
         margin-right: 0.4rem;
-
 
         &--icon {
           width: 10%;
@@ -127,10 +127,9 @@
         }
       }
 
-      &__lastName{
+      &__lastName {
         @include customized-input-div;
         width: 50%;
-        
 
         &--icon {
           width: 10%;
@@ -214,5 +213,11 @@
         @include Links-styles;
       }
     }
+  }
+}
+
+@include media-query-lg(500px) {
+  .signUp-form {
+    width: 90%;
   }
 }

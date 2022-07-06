@@ -39,6 +39,7 @@
   width: 100vw;
   height: 95vh;
   padding-top: 4rem;
+  position: relative;
 
   @include general--flex;
   justify-content: flex-start;
@@ -101,9 +102,9 @@
     @include general--flex;
     flex-direction: column;
 
-    width: 50%;
-    min-width: 250px;
-    max-width: 300px;
+    width: 40%;
+    min-width: 300px;
+    // max-width: 300px;
     padding: 1rem;
 
     position: relative;
@@ -205,5 +206,12 @@
         @include Links-styles;
       }
     }
+  }
+}
+
+@include media-query-lg(500px) {
+  .signIn-form {
+    width: 90%;
+    // margin: auto;
   }
 }
