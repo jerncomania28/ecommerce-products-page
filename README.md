@@ -1,11 +1,10 @@
-
 # E-commerce Product's Page
 
 Product's Page section of an E-commerce Application .
 
 ### ScreenShot
 
-![screenshot](./src/assets/page.png)
+![screenshot](./src/assets/page-update);
 
 ### Functionalities Implemented
 
@@ -15,11 +14,20 @@ Product's Page section of an E-commerce Application .
 - Displaying Total Cost Of All Items Present In Cart.
 - Increasing And Decreasing Quantity Of Item In Cart.
 - Display Carousel for Mobile , Customized Carousel for Desktop.
+- Authentication with firebase e.g signInWithEmailAndPassword , signInWithGooglePopUp etc
 
 ### Links
 
 - Solution URL: [https://github.com/jerncomania28/ecommerce-products-page](https://github.com/jerncomania28/ecommerce-products-page)
 - Live Site URL: [https://candid-profiterole-dabc72.netlify.app/](https://candid-profiterole-dabc72.netlify.app/)
+
+### Sign In Page
+
+![sign-in](./src/assets/sign-in-page);
+
+### Sign Up Page
+
+![sign-up](./src/assets/sign-up-page);
 
 ## Process
 
@@ -31,6 +39,7 @@ Product's Page section of an E-commerce Application .
 - collated and carefully fix the Independent Components to it's required sections.
 - Worked on all action functions in the global states .
 - Integrated them into the created Components.
+- installed Firebase a dependency , connected my local instance to the Instance online and wrote all helper Functions.
 
 ### Built with
 
@@ -53,7 +62,7 @@ Product's Page section of an E-commerce Application .
  _pages.scss
 ```
 
-### Continued Development 
+### Continued Development
 
 - State Mangement e.g Redux.
 - Typescript in React.

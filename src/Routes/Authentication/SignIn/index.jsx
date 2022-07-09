@@ -82,14 +82,10 @@ const SignIn = () => {
                     setErrorMessage("Your email address is Invalid ");
                     break;
 
-                default : console.log("error signing In " , err.code);
+                default: console.log("error signing In ", err.code);
 
             }
 
-            // if (err.code === "auth/invalid-email") {
-            //     setErrorMessage("Your email address is Invalid");
-            // }
-            // console.log("error signing In", err.message);
         }
 
     }

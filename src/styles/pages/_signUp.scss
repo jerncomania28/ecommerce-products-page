@@ -113,6 +113,7 @@
       @include general--flex;
       // justify-content: center;
       align-items: center;
+      width: 100%;
 
       &__firstName {
         @include customized-input-div;
